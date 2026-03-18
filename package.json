@@ -1,0 +1,70 @@
+{
+  "name": "@hasna/swarm",
+  "version": "0.0.1",
+  "description": "Autonomous swarm orchestrator for headless AI agent CLIs — CLI + MCP server + REST API + web dashboard",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "swarm": "dist/cli/index.js",
+    "swarm-mcp": "dist/mcp/index.js",
+    "swarm-serve": "dist/server/index.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "dashboard/dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "bun build src/cli/index.ts --outdir dist/cli --target bun && bun build src/mcp/index.ts --outdir dist/mcp --target bun --external @modelcontextprotocol/sdk && bun build src/server/index.ts --outdir dist/server --target bun && bun build src/index.ts --outdir dist --target bun && tsc --emitDeclarationOnly --outDir dist",
+    "build:cli": "bun build src/cli/index.ts --outdir dist/cli --target bun",
+    "build:mcp": "bun build src/mcp/index.ts --outdir dist/mcp --target bun --external @modelcontextprotocol/sdk",
+    "build:server": "bun build src/server/index.ts --outdir dist/server --target bun",
+    "build:lib": "bun build src/index.ts --outdir dist --target bun && tsc --emitDeclarationOnly --outDir dist",
+    "typecheck": "tsc --noEmit",
+    "test": "bun test",
+    "dev:cli": "bun run src/cli/index.ts",
+    "dev:mcp": "bun run src/mcp/index.ts",
+    "dev:serve": "bun run src/server/index.ts"
+  },
+  "keywords": [
+    "swarm",
+    "orchestrator",
+    "ai-agents",
+    "claude-code",
+    "codex",
+    "gemini",
+    "mcp",
+    "headless",
+    "autonomous"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hasna/swarm.git"
+  },
+  "engines": {
+    "bun": ">=1.0.0"
+  },
+  "author": "Andrei Hasna <andrei@hasna.com>",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.27.1",
+    "chalk": "^5.6.2",
+    "commander": "^13.1.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.3.10",
+    "typescript": "^5.9.3"
+  }
+}

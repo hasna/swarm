@@ -1,0 +1,9 @@
+node_modules/\ntmp/\npackage-lock.json
+dist/
+*.db
+*.db-wal
+*.db-shm
+.env
+.secrets/
+bun.lock
+dashboard/dist/
