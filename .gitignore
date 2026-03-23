@@ -1,4 +1,6 @@
-node_modules/\ntmp/\npackage-lock.json
+node_modules/
+tmp/
+package-lock.json
 dist/
 *.db
 *.db-wal
