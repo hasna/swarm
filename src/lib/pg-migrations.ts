@@ -1,5 +1,5 @@
 /**
- * PostgreSQL migrations for open-swram cloud sync.
+ * PostgreSQL migrations for open-swarm cloud sync.
  *
  * Equivalent of the SQLite schema in db/index.ts, translated for PostgreSQL.
  */
